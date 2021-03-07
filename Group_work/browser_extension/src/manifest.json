@@ -1,0 +1,44 @@
+{
+  "name": "Rebuilding the Web: Media and Video",
+  "version": "1.6",
+  "description": "Redesigning YouTube's interface to mimimise distractions and improve user focus.",
+  "permissions": ["activeTab", "storage", "tabs", "webRequest", "webRequestBlocking", "<all_urls>"],
+  "background": {
+    "scripts": ["background-adblock.js", "background-timer.js", "background-bingeTimer.js"],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/on16.png",
+      "32": "images/on32.png",
+      "64": "images/on64.png",
+      "128": "images/on128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": [
+        "content-helper.js",
+        "content-thumbnail.js",
+        "content-sidebar.js",
+        "content-motivation.js",
+        "content-layout.js",
+        "content-timer.js",
+        "content-bar.js",
+        "content-comments.js",
+        "content-update.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": ["*.txt"],
+  "icons": {
+    "16": "images/on16.png",
+    "32": "images/on32.png",
+    "64": "images/on64.png",
+    "128": "images/on128.png"
+  },
+  "manifest_version": 2
+}

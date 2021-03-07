@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>YouTube Escape</title>
+  <link rel="stylesheet" href="switches.css">
+  <link rel="stylesheet" href="timer.css">
+  <link rel="stylesheet" href="popup.css">
+
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <!--Fonts-->
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <h1><img src="images/on32.png" alt="RabbitIcon"> YouTube Escape</h1>
+  <p>Escaping the YouTube rabbit hole</p>
+
+  <div id="interface1">
+    <button id="big-button"></button>
+
+    <h2>Layout Options</h2>
+    <table class="options">
+      <tr>
+        <td>
+          <b>Home Page</b>
+          <div class="tooltip">
+            <img src="https://img.icons8.com/flat_round/50/000000/question-mark.png" style="width:16px">
+            <span class="tooltiptext">Google style home page layout</span>
+          </div>
+        </td>
+        <td>
+          <label class="switch">
+            <input type="checkbox" id="homepage">
+            <span class="slider round"></span>
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <b>Watch Page</b>
+          <div class="tooltip">
+            <img src="https://img.icons8.com/flat_round/50/000000/question-mark.png" style="width:16px">
+            <span class="tooltiptext">Shift description and recommended videos in watch page</span>
+          </div>
+        </td>
+        <td>
+          <label class="switch">
+            <input type="checkbox" id="watchpage">
+            <span class="slider round"></span>
+          </label>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <b>Comments</b>
+          <div class="tooltip">
+            <img src="https://img.icons8.com/flat_round/50/000000/question-mark.png" style="width:16px">
+            <span class="tooltiptext">Remove comments</span>
+          </div>
+        </td>
+        <td>
+          <label class="switch">
+            <input type="checkbox" id="comments">
+            <span class="slider round"></span>
+          </label>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="interface2">
+    <h2>Blocked from YouTube for</h2>
+    <div id="timer-output">0h 0m 0s</div>
+  </div>
+
+  <br>
+  <!--Feedback Form-->
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-v71c0JgaL_MMhCYJy2BKWjrce0DpoZ46gbXv6eggztkJRg/viewform?usp=sf_link"
+    target="_blank" id="feedback-form">User Feedback Form</a>
+  <script src="popup.js"></script>
+</body>
+
+</html>

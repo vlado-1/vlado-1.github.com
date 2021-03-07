@@ -1,0 +1,86 @@
+/*********************************/
+/*                               */
+/* CSS for Other Popup Elements  */
+/*                               */
+/*********************************/
+
+body {
+  font-family: 'Roboto';
+  color: white;
+  text-align: center;
+  background-color: #282828;
+  overflow: hidden;
+  width: 240px;
+  padding: 1px;
+}
+
+#feedback-form {
+  font-size: 16px;
+  background: red;
+  color: white;
+  display: block;
+  border-radius: 8px;
+  margin: 5px;
+}
+
+#big-button {
+  font-size: 40px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 20px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.3s;
+  box-shadow: 0 5px #999;
+}
+
+#big-button:hover {opacity: 1}
+
+#big-button:active {
+  box-shadow: 0 3px #999;
+  transform: translateY(2px);
+}
+
+.options {
+  height: 100px;
+  margin: 0 auto;
+}
+
+b {
+  font-size: 15px;
+}
+
+.options td {
+  width: 50%;
+}
+
+/* Help mouseover */
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: white;
+  border-color: #1bbbe4;
+  border-style: solid;
+  border-width: 2px;
+  color: #282828;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
