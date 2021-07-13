@@ -1,0 +1,11 @@
+﻿body {
+  background-color: #e3e3e3;
+}
+
+.profileImg {
+  margin-top: 0.5em;
+}
+
+html {
+  overflow-y: scroll;
+}

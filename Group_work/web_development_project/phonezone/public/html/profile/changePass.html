@@ -1,0 +1,34 @@
+<br />
+<br />
+
+<!-- Only submit the form if it's valid -->
+<form
+  name="passform"
+  ng-submit="passform.$valid && changePassword(pass.current, pass.new)"
+>
+  <div class="form-group">
+    <label for="newPwd">New password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="newPwd"
+      ng-model="pass.new"
+      ng-required="true"
+    />
+  </div>
+  <div class="form-group">
+    <label for="currPwd">Current password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="currPwd"
+      ng-model="pass.current"
+      ng-required="true"
+    />
+    <p class="help-block">
+      Please enter your current password to make changes.
+    </p>
+  </div>
+
+  <button type="submit" class="btn btn-default">Save changes</button>
+</form>

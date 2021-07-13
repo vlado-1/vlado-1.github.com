@@ -1,0 +1,62 @@
+<!-- 
+This is our skeleton file. Angular will dynamically
+insert other html files into this one on demand. It contains nothing besides imports.
+ -->
+
+<!DOCTYPE html>
+<!--ng-app directive tells AngularJS that mainPage
+	is the root element of the application -->
+<html ng-app="myApp">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <!--ng-view includes the rendered template of
+			the current route into the main page-->
+    <ng-include src="'html/main/header.html'"></ng-include>
+    <div ng-view></div>
+
+    <!--Angularjs libraries-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.8/angular-filter.min.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/angularjs-slider/6.0.1/rzslider.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-slider/6.0.1/rzslider.min.js"></script>
+
+    <!-- Config files -->
+    <script src="js/app.js"></script>
+    <script src="js/app.config.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/controllers/main/homeCtrl.js"></script>
+    <script src="js/controllers/main/infoCtrl.js"></script>
+    <script src="js/controllers/main/searchCtrl.js"></script>
+    <script src="js/controllers/main/headerCtrl.js"></script>
+	  <script src="js/controllers/checkout/checkoutCtrl.js"></script>
+    <script src="js/controllers/login/authCtrl.js"></script>
+    <script src="js/controllers/profile/profileCtrl.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="vendors/js/bootstrap.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Crypto -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+
+    <!-- Icons -->
+    <script
+      src="https://kit.fontawesome.com/d79d229217.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

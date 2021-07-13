@@ -1,0 +1,146 @@
+<br />
+<br />
+
+<h3>My listings:</h3>
+<hr />
+
+<table class="table table-hover">
+  <thead class="bg-primary">
+    <tr class="border">
+      <th>Image</th>
+      <th>Name</th>
+      <th>Brand</th>
+      <th>Price</th>
+      <th>In stock</th>
+      <th>Status</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody class="bg-info">
+    <tr
+      class="border"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapseExample"
+      aria-expanded="false"
+      ng-repeat="phone in phones"
+    >
+      <td>
+        <img
+          ng-src="{{phone.image}}"
+          width="75"
+          height="80"
+          class="border rounded"
+          alt="phonePicture"
+        />
+      </td>
+      <td>{{phone.title}}</td>
+      <td>{{phone.brand}}</td>
+      <td>{{phone.price | currency}}</td>
+      <td>{{phone.stock}}</td>
+      <td>
+        <label class="switch">
+          <input
+            type="checkbox"
+            ng-checked="phone.enabled"
+            ng-click="toggleStatus(phone)"
+          />
+          <span class="slider"></span>
+        </label>
+      </td>
+      <td>
+        <button
+          type="button"
+          class="btn btn-danger btn-circle"
+          ng-click="deleteListing(phone)"
+        >
+          <i class="fas fa-trash"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- FLOATING ACTION BUTTON (ADD NEW LISTING) -->
+<div class="floating-action-btn">
+  <button
+    type="button"
+    class="btn btn-success btn-circle btn-lg"
+    data-toggle="modal"
+    data-target="#myModal"
+  >
+    <i class="fas fa-plus"></i>
+  </button>
+</div>
+
+<!-- Modal for phonelisting creation -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-md">
+    <!-- Modal/popup content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+          &times;
+        </button>
+        <h4 class="modal-title">Create new listing</h4>
+      </div>
+      <div class="modal-body">
+        Please enter the listing details:
+        <br />
+        <br />
+        <br />
+        <form
+          name="createform"
+          ng-submit="createform.$valid && createListing(phone)"
+        >
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              id="inputTitle"
+              placeholder="Title"
+              ng-model="phone.title"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              id="inputBrand"
+              placeholder="Brand"
+              ng-model="phone.brand"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="number"
+              class="form-control"
+              id="inputStock"
+              placeholder="Stock"
+              ng-model="phone.stock"
+              min="0"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="number"
+              class="form-control"
+              id="inputPrice"
+              placeholder="Price in AUD"
+              ng-model="phone.price"
+              min="0"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-success">Add</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            Close
+          </button>
+        </form>
+      </div>
+      <div class="modal-footer"></div>
+    </div>
+  </div>
+</div>

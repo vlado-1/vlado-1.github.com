@@ -1,0 +1,110 @@
+<!-- Include this header where necessary. -->
+<!-- NAVBAR -->
+<nav class="navbar navbar-inverse" ng-controller="HeaderController">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target="#bs-example-navbar-collapse-1"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">PhoneZone</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <a href="#/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li><a href="" ng-hide="!signed_in" ng-click="verifyGoToProfile()">My profile</a></li>
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input
+            ng-model="searchBar"
+            type="text"
+            class="form-control"
+            placeholder="Search"
+          />
+        </div>
+        <a href="#/main/search/{{searchBar}}">
+          <button class="btn btn-default">Submit</button>
+        </a>
+      </form>
+      <ul class="nav navbar-nav navbar-right" ng-controller="HeaderController">
+        <li>
+          <a href="" ng-click="verifyGoToProfile()" style="display: inline">
+            <img
+              class="profileImg"
+              ng-src="/images/abstract-user-flat-4.svg"
+              width="35"
+              height="35"
+              class="rounded"
+              border="0"
+              alt="profile_img"
+            />
+          </a>
+        </li>
+         <li ng-hide="!signed_in">
+       		 <a href="#/checkout">Checkout</a>
+        </li>
+        <li ng-hide="!signed_in">
+       
+          <a href="">{{username}}</a>
+        </li>
+        <!-- Sign In Icon -->
+        <li ng-click="login()" ng-hide="signed_in"><a href="">Sign In</a></li>
+        <!-- Log Out Icon -->
+        <li ng-hide="!signed_in" data-toggle="modal" data-target="#logoutModal">
+          <a href="">Log Out</a>
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
+<!-- NAVBAR END -->
+
+<!-- Modal/popup: ask user if they want to log out -->
+<div
+  id="logoutModal"
+  class="modal fade"
+  role="dialog"
+  ng-controller="HeaderController"
+>
+  <div class="modal-dialog modal-sm">
+    <!-- Modal/popup content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+          &times;
+        </button>
+        <h4 class="modal-title">Logout</h4>
+      </div>
+      <div class="modal-body">Are you sure you want to logout?</div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-default"
+          data-dismiss="modal"
+          ng-click="login()"
+        >
+          Logout
+        </button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

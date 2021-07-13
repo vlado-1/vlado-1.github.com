@@ -1,0 +1,175 @@
+<!-- ------------------ -->
+<!-- ------------------ -->
+<!-- Home State Content -->
+<!-- ------------------ -->
+<!-- ------------------ -->
+<div id="homestate" class="d-flex flex-column container p-2 border bg-white">
+  <!-- Sold Out Soon and Best Seller Content -->
+  <div class="content d-flex flex-fill">
+    <!-- Sold Out Soon: a table contraining each phone entry as a row -->
+    <div class="flex-fill">
+      <h2>Phone information</h2>
+      <br />
+      <table class="table table-hover">
+        <thead class="bg-light">
+          <tr class="border">
+            <th>Image</th>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Price</th>
+            <th>Seller Name</th>
+            <th>In stock</th>
+            <th>In Cart</th>
+          </tr>
+        </thead>
+        <tbody class="bg-light">
+          <tr
+            class="border"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseExample"
+            aria-expanded="false"
+          >
+            <td>
+              <img
+                ng-src="{{phone.image}}"
+                width="75"
+                height="80"
+                class="border rounded"
+                alt="phonePicture"
+              />
+            </td>
+            <td>{{phone.title}}</td>
+            <td>{{phone.brand}}</td>
+            <td>{{phone.price | currency}}</td>
+            <td>{{phone.seller.firstname + " " + phone.seller.lastname}}</td>
+            <td>{{phone.stock}}</td>
+            <td>{{cart_quantity}}</td>
+            <td>
+              <!-- Trigger the modal/popup with a button -->
+              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#cartModal" id="cartButton">
+                Add to cart
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <br />
+</div>
+
+<div class="review d-flex flex-fill">
+  <div class="text-center">
+    <h2>Reviews</h2>
+  </div>
+
+  <div class="row">
+    <div class="col-md-offset-3 col-md-6">
+      Rating:
+      <input
+        type="number",
+        id="user_rating",
+        name="user_rating",
+        min="1",
+        max="5",
+        ng-model="rating"
+      />
+      <button id="post_comment" class="btn btn-primary" ng-click="postReview()"> Post Comment </button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-1 col-md-offset-2">
+      <div class="row">
+        <img
+              class="user_comment_info"
+              ng-src="/images/abstract-user-flat-4.svg"
+              width="45"
+              height="45"
+              class="rounded"
+              border="0"
+              alt="profile_img"
+            />
+      </div>
+      <div class="row">
+        <p class="user_comment_info">{{username}}</p>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <textarea id="user_comment" class="form-control" ng-model="comment"></textarea>
+    </div>
+  </div>
+
+  <div class="container">
+    <div
+      class="row"
+      ng-repeat="review in phone.reviews.slice(0,num_reviews_shown)"
+    >
+      <!-- Name and Rating of user -->
+      <h5 class="mt-0 text-start">
+        <p>
+          Reviewer: {{review.reviewer.firstname + " " +
+          review.reviewer.lastname}}
+        </p>
+        <p>Rating: {{review.rating}}</p>
+      </h5>
+
+      <!-- Message Content -->
+      <p class="text-start">
+        {{ review.show_all ? review.comment : review.comment.substring(0,201)}}
+        <a ng-click="showText(review)" href="">{{review.comment.length > 200? ( review.show_all ? "show less" : "show more") : ""}}</a>
+      </p>
+      <hr />
+    </div>
+
+    <button
+      type="button"
+      class="btn btn-success"
+      id="feedButton"
+      ng-click="showReviews(phone.reviews)"
+    >
+      {{show_all_reviews ? "Show Less Reviews" : "Show More Reviews"}}
+    </button>
+  </div>
+</div>
+
+<!-- Modal/popup -->
+<div id="cartModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <!-- Modal/popup content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+          &times;
+        </button>
+        <h4 class="modal-title">Add to Cart</h4>
+      </div>
+      <div class="modal-body">
+        Please select quantity:
+        <input
+          type="number"
+          id="quantity"
+          name="quantity"
+          min="0"
+          max="{{phone.stock - cart_quantity}}"
+          ng-model="selected_quantity"
+        />
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-default"
+          data-dismiss="modal"
+          ng-click="addToCart()"
+        >
+          Add
+        </button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<link rel="stylesheet" href="css/main/info.css" />

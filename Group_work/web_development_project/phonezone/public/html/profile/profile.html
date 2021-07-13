@@ -1,0 +1,19 @@
+<uib-tabset active="activeJustified" justified="true">
+  <uib-tab index="0" heading="Edit profile">
+    <div class="container">
+      <ng-include src="'html/profile/editProfile.html'"></ng-include>
+    </div>
+  </uib-tab>
+  <uib-tab index="1" heading="Change password"
+    ><div class="container">
+      <ng-include src="'html/profile/changePass.html'"></ng-include>
+    </div>
+  </uib-tab>
+  <uib-tab index="2" heading="Manage listings">
+    <div class="container">
+      <ng-include src="'html/profile/listings.html'"></ng-include>
+    </div>
+  </uib-tab>
+</uib-tabset>
+
+<link rel="stylesheet" href="css/profile/profile.css" />

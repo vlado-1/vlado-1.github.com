@@ -1,0 +1,83 @@
+<!-- ------------------ -->
+<!-- ------------------ -->
+<!-- Home State Content -->
+<!-- ------------------ -->
+<!-- ------------------ -->
+<div class="container">
+  <!-- Sold Out Soon and Best Seller Content -->
+  <div id="homestate" class="row">
+    <!-- Sold Out Soon: a table containing each phone entry as a row -->
+    <div class="col-md-6">
+      <h2 class="text-center">Sold Out Soon</h2>
+      <br />
+      <div id="sold_out" class="d-flex p-2 border bg-warning">
+        <table class="table table-hover">
+          <thead class="bg-light">
+            <tr class="border">
+              <th>Image</th>
+              <th>Name</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody class="bg-light">
+            <tr
+              ng-repeat="phone in soldOutSoon"
+              class="border"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseExample"
+              aria-expanded="false"
+              ng-click="showInfo(phone)"
+            >
+              <td>
+                <img
+                  ng-src="{{phone.imagePath}}"
+                  width="75"
+                  height="80"
+                  class="border rounded"
+                  alt="phonePicture"
+                />
+              </td>
+              <td><h6>{{phone.name}}</h6></td>
+              <td>{{phone.price | currency}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <!-- Best Sellers: a table contraining each phone entry as a row -->
+      <h2 class="text-center">Best Sellers</h2>
+      <br />
+      <div id="best_sellers" class="d-flex p-2 border bg-info">
+        <table class="table table-hover">
+          <thead class="bg-light">
+            <tr class="border">
+              <th>Image</th>
+              <th>Name</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody class="bg-light">
+            <tr ng-repeat="phone in bestSellers" ng-click="showInfo(phone)">
+              <td>
+                <img
+                  ng-src="{{phone.imagePath}}"
+                  width="90"
+                  height="80"
+                  class="border rounded"
+                  alt="phonePicture"
+                  id="bs_image"
+                />
+              </td>
+              <td><h6>{{phone.name}}</h6></td>
+              <td>{{phone.price | currency}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<link rel="stylesheet" href="css/main/home.css" />

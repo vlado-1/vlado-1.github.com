@@ -1,0 +1,55 @@
+<br />
+<br />
+
+<!-- Only submit the form if it's valid -->
+<form
+  name="editform"
+  ng-submit="editform.$valid && editProfile(edit.fName, edit.lName, edit.email, edit.pwd)"
+>
+  <div class="form-group">
+    <label for="inputFName">First name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="inputFName"
+      ng-model="edit.fName"
+      ng-required="true"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="inputLName">Last name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="inputLName"
+      ng-model="edit.lName"
+      ng-required="true"
+    />
+  </div>
+  <div class="form-group">
+    <label for="inputEmail">Email</label>
+    <input
+      type="email"
+      class="form-control"
+      id="inputEmail"
+      ng-model="edit.email"
+      ng-required="true"
+    />
+  </div>
+  <div class="form-group">
+    <label for="inputPwd">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="inputPwd"
+      ng-model="edit.pwd"
+      ng-required="true"
+    />
+    <p class="help-block">
+      Please enter your current password to make changes.
+    </p>
+  </div>
+
+  <button type="submit" class="btn btn-default">Save changes</button>
+</form>

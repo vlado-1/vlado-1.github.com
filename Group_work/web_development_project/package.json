@@ -1,0 +1,28 @@
+{
+  "name": "webdev-g44-assignment2",
+  "version": "1.0.0",
+  "description": "Assignment 2 repository for team WebDev_G44.",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "crypto-js": "^4.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "mongoose": "^5.12.7",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.sydney.edu.au/COMP5347-2021/WebDev-G44-Assignment2.git"
+  },
+  "author": "",
+  "license": "ISC"
+}

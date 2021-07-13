@@ -1,0 +1,96 @@
+<!-- ------------------ -->
+<!-- ------------------ -->
+<!-- Home State Content -->
+<!-- ------------------ -->
+<!-- ------------------ -->
+<div id="homestate" class="d-flex flex-column container p-2 border bg-white">
+  <div class="content d-flex flex-fill">
+    <div class="flex-fill">
+      <h2>Search results</h2>
+      <br />
+      <div class="row row-no-gutters">
+        <div class="col-md-1">
+          <!-- Dropdown brand filter -->
+          <div class="btn-group" uib-dropdown is-open="status.isopen">
+            <button
+              id="single-button"
+              type="button"
+              class="btn btn-primary"
+              uib-dropdown-toggle
+              ng-disabled="disabled"
+            >
+              Brand <span class="caret"></span>
+            </button>
+            <ul
+              class="dropdown-menu"
+              uib-dropdown-menu
+              role="menu"
+              aria-labelledby="single-button"
+            >
+              <!-- The filter only displays unique brands -->
+              <li role="menuitem" ng-repeat="brand in brands | unique: brand">
+                <a ng-click="selectBrand(brand)">{{brand}}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-1">
+          <a class="btn btn-default" ng-click="selectBrand('')">Reset filter</a>
+        </div>
+
+        <!-- Price range slider -->
+        <div class="col-md-2 col-md-offset-8" id="priceSlider">
+          <rzslider
+            class="custom-slider"
+            rz-slider-model="minPrice"
+            rz-slider-high="maxPrice"
+            rz-slider-options="visSlider.options"
+          ></rzslider>
+        </div>
+      </div>
+
+      <br />
+      <br />
+
+      <!-- Search results -->
+      <div id="searchResults" class="d-flex p-2 border bg-warning">
+        <table class="table table-hover">
+          <thead class="bg-light">
+            <tr class="border">
+              <th>Image</th>
+              <th>Name</th>
+              <th>Brand</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody class="bg-light">
+            <tr
+              class="border"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseExample"
+              aria-expanded="false"
+              ng-repeat="phone in phones | filter: {brand: selectedBrand} | filter: filterPrice"
+              ng-click="showInfo(phone)"
+            >
+              <td>
+                <img
+                  ng-src="{{phone.image}}"
+                  width="90"
+                  height="80"
+                  class="border rounded"
+                  alt="phonePicture"
+                />
+              </td>
+              <td>{{phone.title}}</td>
+              <td>{{phone.brand}}</td>
+              <td>{{phone.price | currency}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <br />
+</div>
+
+<link rel="stylesheet" href="css/main/search.css" />

@@ -1,0 +1,12 @@
+.displayitem {
+  height: 60%;
+  width: 60%;
+}
+
+#sold_out,
+#best_sellers {
+  border-radius: 15px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #575757;
+}

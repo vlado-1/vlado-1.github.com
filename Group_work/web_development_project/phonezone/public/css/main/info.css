@@ -1,0 +1,25 @@
+#user_comment {
+    resize: none;
+    left: 10px;
+    margin: 5px;
+    display: inline;
+}
+
+#user_comment:focus {
+    resize: none;
+    left: 10px;
+    margin: 5px;
+    display: inline;
+    height: 100px;
+}
+
+#post_comment {
+    vertical-align: middle;
+    float: right;
+}
+
+.user_comment_info {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
