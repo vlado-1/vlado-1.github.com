@@ -1,6 +1,3 @@
-# WebDev-G44-Assignment2
-Assignment 2 repository for team WebDev_G44.
-
 # Phonezone
 This project is an eComerce web application that sells mobile phones. 
 
@@ -26,7 +23,7 @@ Before starting the web application, the user should install all dependencies us
  - Robomongo version 1.4.3
 
 # Installing
- - This web application is available at https://github.sydney.edu.au/COMP5347-2021/WebDev-G44-Assignment2
+ - This web application is available at https://github.com/Vlado-1/PastProjects
 # Executing
  - Before executing user should start db using command "mongod.exe --dbpath <mongoDB file location>" in the location of "MongoDB\Server\4.4\bin" file
  - User should create database called phonezone in robomongo.
