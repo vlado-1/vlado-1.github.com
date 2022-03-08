@@ -11,9 +11,15 @@ layout: default
   <h2> Projects </h2>
   
   ---
-  ```java
-  System.out.println("Hello World!");
-  ```
+  {% highlight javascript %}
+function sayHello(name) {
+  if (!name) {
+    console.log('Hello World');
+  } else {
+    console.log(`Hello ${name}`);
+  }  
+}  
+{% endhighlight %}
   ---
   
 </body>
