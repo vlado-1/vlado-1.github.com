@@ -5,6 +5,7 @@ layout: default
 <h1> Vlado Smolovic</h1>
 <h2> Projects </h2>
 
+---
 {% highlight javascript %}
 function sayHello(name) {
   if (!name) {
@@ -14,3 +15,4 @@ function sayHello(name) {
   }  
 }  
 {% endhighlight %}
+---
