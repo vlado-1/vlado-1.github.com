@@ -18,5 +18,4 @@ layout: default
     c = (a + b)**a
     }
     ```
-    
 </body>
