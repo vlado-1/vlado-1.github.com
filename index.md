@@ -4,7 +4,7 @@ layout: default
 
 <!DOCTYPE html>
 <head>
-    <title>Under Construction!</title>
+    <title>Vlado Smolovic</title>
 </head>
 <body>
     <h1> Vlado Smolovic</h1>
